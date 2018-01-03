@@ -26,35 +26,15 @@ export default class CornerSettings {
   rf: PartData;
   rd: PartData;
 
-  parts: {};
+  parts: Object;
   
-  constructor() {
-    this.ub = new PartData( 1, 'あ', 'ub', false);
-    this.ul = new PartData( 3, 'か', 'ul', false);
-    this.ur = new PartData( 5, 'さ', 'ur', false);
-    this.uf = new PartData( 7, 'え', 'uf', false);
-    this.lu = new PartData(10, 'な', 'ul', false);
-    this.lb = new PartData(12, 'に', 'lb', false);
-    this.lf = new PartData(14, 'ね', 'lf', false);
-    this.ld = new PartData(16, 'ぬ', 'ld', false);
-    this.fu = new PartData(19, 'て', 'uf', false);
-    this.fl = new PartData(21, 'け', 'lf', false);
-    this.fr = new PartData(23, 'せ', 'fr', false);
-    this.fd = new PartData(25, 'つ', 'fd', false);
-    this.ru = new PartData(28, 'ら', 'ur', false);
-    this.rf = new PartData(30, 'れ', 'fr', false);
-    this.rb = new PartData(32, 'り', 'rb', false);
-    this.rd = new PartData(34, 'る', 'rd', false);
-    this.bu = new PartData(37, 'た', 'ub', false);
-    this.br = new PartData(39, 'し', 'rb', false);
-    this.bl = new PartData(41, 'き', 'lb', false);
-    this.bd = new PartData(43, 'ち', 'bd', false);
-    this.df = new PartData(46, 'う', 'fd', true);
-    this.dl = new PartData(48, 'く', 'ld', false);
-    this.dr = new PartData(50, 'す', 'rd', false);
-    this.db = new PartData(52, 'い', 'bd', false);
-
+  constructor(edges: Object) {
     this.parts = {};
+    for (let p in edges) {
+      let pd = edges[p];
+      this[p] = new PartData(pd.no, pd.letter, pd.group, pd.isBuffer);
+    }
+
     this.parts[this.ub.no] = this.ub;
     this.parts[this.ul.no] = this.ul;
     this.parts[this.ur.no] = this.ur;
