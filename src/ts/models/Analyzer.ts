@@ -35,7 +35,6 @@ export default class Analyzer {
   }
 
   private analyzeEdges(states: PartState[]): string[] {
-    let i = 0;
     const analyzedParts: {} = this.analyzeAlreadyCorrectEdgeParts(states);
     analyzedParts['fd'] = true;
     const edgess: string[] = [];
@@ -51,8 +50,6 @@ export default class Analyzer {
     }
 
     while(true) {
-      if (i++ > 100) break; // TODO: あとで消す
-
       if (analyzedParts[partData.group]) {
         // buffer
         if (edges.length > 0) {
@@ -107,7 +104,6 @@ export default class Analyzer {
   }
 
   private analyzeCorners(states: PartState[]): string[] {
-    let i = 0;
     const analyzedParts: {} = this.analyzeAlreadyCorrectCornerParts(states);
     analyzedParts['ulb'] = true;
     const cornerss: string[] = [];
@@ -123,8 +119,6 @@ export default class Analyzer {
     }
 
     while(true) {
-      if (i++ > 100) break; // TODO: あとで消す
-
       if (analyzedParts[partData.group]) {
         // buffer
         if (corners.length > 0) {
