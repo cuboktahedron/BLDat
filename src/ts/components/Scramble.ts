@@ -42,5 +42,11 @@ export default {
 
       this.$emit('analyze', this.scramble);
     },
+  },
+
+  watch: {
+    scramble() {
+      this.scramble = this.scramble.replace(/[ \t]/g, '');
+    },
   }
 } as ComponentOptions<Scrampble>
