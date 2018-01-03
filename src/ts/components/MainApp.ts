@@ -35,9 +35,13 @@ export default {
 
   template: `
     <div>
-      <SettingsArea :settings="settings" />
-      <hr class="separater">
-      <AnalyzeArea :settings="settings" />
+      <Header />
+      <div id="contents-area">
+        <SettingsArea :settings="settings" />
+        <hr class="separater">
+        <AnalyzeArea :settings="settings" />
+      </div>
+      <Footer />
     </div>`,
 
   methods: {
