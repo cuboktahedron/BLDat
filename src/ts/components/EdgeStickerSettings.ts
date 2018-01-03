@@ -35,7 +35,7 @@ export default {
         </div>
         <div class="v-m">
           <PartSetting class="h-l" :data="edges.ul" />
-          <NullPartSetting class="h-l" />
+          <NullPartSetting class="h-c" />
           <PartSetting class="h-r" :data="edges.ur" />
         </div>
         <div class="v-b">
@@ -53,7 +53,7 @@ export default {
         </div>
         <div class="v-m">
           <PartSetting class="h-l" :data="edges.lb" />
-          <NullPartSetting class="h-l" />
+          <NullPartSetting class="h-c" />
           <PartSetting class="h-r" :data="edges.lf" />
         </div>
         <div class="v-b">
@@ -71,7 +71,7 @@ export default {
         </div>
         <div class="v-m">
           <PartSetting class="h-l" :data="edges.fl" />
-          <NullPartSetting class="h-l" />
+          <NullPartSetting class="h-c" />
           <PartSetting class="h-r" :data="edges.fr" />
         </div>
         <div class="v-b">
@@ -89,7 +89,7 @@ export default {
         </div>
         <div class="v-m">
           <PartSetting class="h-l" :data="edges.rf" />
-          <NullPartSetting class="h-l" />
+          <NullPartSetting class="h-c" />
           <PartSetting class="h-r" :data="edges.rb" />
         </div>
         <div class="v-b">
@@ -107,7 +107,7 @@ export default {
         </div>
         <div class="v-m">
           <PartSetting class="h-l" :data="edges.br" />
-          <NullPartSetting class="h-l" />
+          <NullPartSetting class="h-c" />
           <PartSetting class="h-r" :data="edges.bl" />
         </div>
         <div class="v-b">
@@ -125,7 +125,7 @@ export default {
         </div>
         <div class="v-m">
           <PartSetting class="h-l" :data="edges.dl" />
-          <NullPartSetting class="h-l" />
+          <NullPartSetting class="h-c" />
           <PartSetting class="h-r" :data="edges.dr" />
         </div>
         <div class="v-b">
