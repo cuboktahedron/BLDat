@@ -1,6 +1,7 @@
 import PartData from '../models/PartData'
+import PartsSettings from '../models/PartsSettings'
 
-export default class CornerSettings {
+export default class CornerSettings implements PartsSettings {
   ub: PartData;
   ul: PartData;
   ur: PartData;
@@ -27,7 +28,7 @@ export default class CornerSettings {
   rd: PartData;
 
   parts: Object;
-  
+
   constructor(edges: Object) {
     this.parts = {};
     for (let p in edges) {
@@ -59,5 +60,23 @@ export default class CornerSettings {
     this.parts[this.dl.no] = this.dl;
     this.parts[this.dr.no] = this.dr;
     this.parts[this.db.no] = this.db;
+  }
+
+  get groups(): string[] {
+    return ['bd', 'fd', 'fr', 'lb', 'ld', 'lf', 'rb', 'rd', 'ub', 'uf', 'ul', 'ur'];
+  }
+
+  get nextCandidates(): string[] {
+    return ['ub', 'ul', 'ur', 'uf', 'fl', 'fr', 'lb', 'ld', 'rb', 'rd', 'db'];
+  }
+
+  get bufferParts(): PartData {
+    for (let p in this.parts) {
+      if (this.parts[p].isBuffer) {
+        return this.parts[p];
+      }
+    }
+
+    return null;
   }
 }
