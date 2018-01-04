@@ -23,16 +23,42 @@ export default class Analyzer {
   }
 
   private scrambleParts(scramble: string): PartState[] {
-    const states: PartState[] = [];
+    const completeStates: PartState[] = [];
     ['u', 'l', 'f', 'r', 'b', 'd'].forEach((face, index) => {
       for (let i = 0; i < 9; i++) {
         const state = new PartState(index * 9 + i, this.settings.colors[face]);
-        states.push(state);
+        completeStates.push(state);
       }
     });
 
     const scrambler = new Scrambler<PartState>();
-    return scrambler.scramble(states, scramble);
+    let states: PartState[] = scrambler.scramble(completeStates, scramble);
+
+    // correct u-face center parts position
+    while (true) {
+      const uCenter = states[4];
+      if (uCenter.no === 4) { // 4 is u-center parts
+        break;
+      }
+
+      if (uCenter.no === 22) { // 22 is f-center parts
+        states = scrambler.scramble(states, "z");
+      } else {
+        states = scrambler.scramble(states, "x");
+      }
+    }
+
+    // correct f-face center parts position
+    while (true) {
+      const fCenter = states[22];
+      if (fCenter.no === 22) {
+        break;
+      }
+
+      states = scrambler.scramble(states, "y");
+    }
+
+    return states;
   }
 
   private analyzeParts(states: PartState[], settings: PartsSettings): string[] {

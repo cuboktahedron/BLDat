@@ -66,5 +66,16 @@ describe('Analyzer', function () {
       expect(result.corners).to.eql(["る", "らきせた", "りぬねり"]);
       expect(result.hasParity).to.be.true;
     });
+
+    it(`corrects u-f face`, function () {
+      const analyzer = new Analyzer(settings);
+      const result = analyzer.analyze("xyz");
+
+      expect(result.scramble).to.equal("xyz");
+      expect(result.edges).to.eql([]);
+      expect(result.corners).to.eql([]);
+      expect(result.hasParity).to.be.false;
+    });
+
   });
 });
