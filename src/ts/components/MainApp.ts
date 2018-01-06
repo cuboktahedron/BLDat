@@ -4,12 +4,14 @@ import Settings from '../models/Settings'
 
 export interface MainApp extends Vue {
   settings: Settings,
+  showsSettings: boolean,
 }
 
 export default {
   data: function () {
     return {
       settings: null,
+      showsSettings: true,
     }
   },
 
@@ -34,11 +36,14 @@ export default {
   },
 
   template: `
-    <div>
+    <div id="container">
       <Header />
       <div id="contents-area">
-        <SettingsArea :settings="settings" />
-        <hr class="separater">
+        <SettingsArea :settings="settings" v-show="showsSettings" />
+        <div class="folder" @click="toggleSettings">
+          <icon name="fold" width="24" v-if="showsSettings"></icon>
+          <icon name="unfold" width="24" v-if="!showsSettings"></icon>
+        </div>
         <AnalyzeArea :settings="settings" />
       </div>
       <Footer />
@@ -47,6 +52,10 @@ export default {
   methods: {
     autoSaveSettings() {
       window.localStorage.setItem('settings', JSON.stringify(this.settings));
-    }
+    },
+
+    toggleSettings() {
+      this.showsSettings = !this.showsSettings;
+    },
   }
 } as ComponentOptions<MainApp>

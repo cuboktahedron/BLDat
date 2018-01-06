@@ -3,8 +3,13 @@
   margin: 0;
 }
 
-#app {
-  margin: 16px;
+html, body {
+  height: 100%;
+}
+
+#container {
+  position: relative;
+  min-height: 100%;
 }
 
 #setting-area {
@@ -22,7 +27,7 @@
 }
 
 a.title {
-  background: #333;
+  background: #444;
   color: white;
   display: block;
   font-size: 24px;
@@ -216,15 +221,30 @@ a.title {
 }
 
 .result-title {
-  background: #333;
+  background: #444;
   box-sizing: border-box;
   color: white;
   display: block;
   padding: 0 4px;
 }
 
-hr.separater {
-  margin: 16px 0;
+.folder {
+  background: #444;
+  height: 24px;
+  text-align: center;
+  width: 100%;
+
+  .icon {
+    fill: #ccc;
+  }
+}
+
+.folder:hover {
+  cursor: pointer;
+ 
+  .icon {
+    fill: white;
+  }
 }
 
 .has-error {
@@ -248,6 +268,12 @@ hr.separater {
   text-align: center;
 }
 
+#footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
 #contents-area {
-  margin: 32px 0;
+  padding-bottom: 48px;
 }
