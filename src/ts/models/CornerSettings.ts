@@ -68,7 +68,7 @@ export default class CornerSettings implements PartsSettings {
   }
 
   get nextCandidates(): string[] {
-    return ['rdf', 'rub', 'rdb', 'ruf', 'luf', 'fdl', 'ulb'];
+    return ['rdf', 'rub', 'rdb', 'ruf', 'luf', 'fdl', 'dlb'];
   }
 
   get bufferParts(): PartData {
