@@ -25,7 +25,7 @@ export default {
 
   computed: {
     validate: function (): boolean {
-      const r = /^((([UDRLFB]w?'*)|([EMSxyz]'*))([0-9]*))*$/;
+      const r = /^((([UDRLFB]w?'*)|([EMSxyz]'*))([0-9]*))*$/i;
       return r.test(this.scramble);
     },
   },
@@ -46,7 +46,20 @@ export default {
 
   watch: {
     scramble() {
-      this.scramble = this.scramble.replace(/[ \t]/g, '');
+      let scramble: string = this.scramble.replace(/[ \t]/g, '');
+      const paths = [];
+      for (let i = 0, len = scramble.length; i < len; i++) {
+        const s = scramble[i];
+        if (s >= 'a' && s <= 'v') {
+          paths.push(s.toUpperCase());
+        } else if (s >= 'W' && s <= 'Z') {
+          paths.push(s.toLowerCase());
+        } else {
+          paths.push(s);
+        }
+      }
+
+      this.scramble = paths.join('');
     },
   }
 } as ComponentOptions<Scrampble>
