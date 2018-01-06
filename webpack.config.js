@@ -57,10 +57,6 @@ var inProduction = process.env.NODE_ENV === 'production';
 var inDevelopment = process.env.NODE_ENV === "development";
 
 if (inProduction) {
-  configs.plugins.push(new LicensePack({
-    glob: '{LICENSE,license,License}*'
-  }));
-
   configs.plugins.push(new UglifyJSPlugin({
     uglifyOptions: {
       beautify: false,
@@ -68,6 +64,10 @@ if (inProduction) {
       compress: true,
       comments: false
     }
+  }));
+
+  configs.plugins.push(new LicensePack({
+    glob: '{LICENSE,license,License}*'
   }));
 }
 
