@@ -31,15 +31,12 @@ export default {
     this.settings = new Settings(settings);
   },
 
-  mounted() {
-    setInterval(this.autoSaveSettings, 5000);
-  },
-
   template: `
     <div id="container">
       <Header />
       <div id="contents-area">
-        <SettingsArea :settings="settings" v-show="showsSettings" />
+        <SettingsArea :settings="settings" v-show="showsSettings"
+          @save="onSave" />
         <div class="folder" @click="toggleSettings">
           <icon name="fold" width="24" v-if="showsSettings"></icon>
           <icon name="unfold" width="24" v-if="!showsSettings"></icon>
@@ -50,12 +47,12 @@ export default {
     </div>`,
 
   methods: {
-    autoSaveSettings() {
-      window.localStorage.setItem('settings', JSON.stringify(this.settings));
-    },
-
     toggleSettings() {
       this.showsSettings = !this.showsSettings;
     },
+
+    onSave() {
+      window.localStorage.setItem('settings', JSON.stringify(this.settings));
+    }
   }
 } as ComponentOptions<MainApp>

@@ -16,6 +16,12 @@ html, body {
   margin: 0 auto;
   max-width: 384px;
   position: relative;
+
+  .button-area {
+    margin: 8px 0;
+    text-align: center;
+    width: 384px;
+  }
 }
 
 #edge-sticker,
@@ -277,4 +283,20 @@ a.title {
 
 #contents-area {
   padding-bottom: 48px;
+}
+
+a.button {
+  background: #333;
+  border: solid 2px white;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px;
+  text-align: center;
+  user-select: none;
+  width: 60px;
+}
+
+a.button:hover {
+  border: solid 2px grey;
 }

@@ -30,8 +30,14 @@ export default {
       <CornerStickerSettings :corners="settings.corners" :colors="settings.colors" />
       <a class="title">COLORS</a>
       <FaceColorSettings :colors="settings.colors" />
+      <div class="button-area">
+        <a class="button" @click="onClickSave">Save</a>
+      </div>
     </div>`,
 
   methods: {
+    onClickSave() {
+      this.$emit('save');
+    }
   }
 } as ComponentOptions<SettingsArea>
