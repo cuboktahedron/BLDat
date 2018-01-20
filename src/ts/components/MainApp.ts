@@ -24,11 +24,11 @@ export default {
       } else {
         settings = JSON.parse(settingsJson);
       }
-    } catch (ex) {
-      settings = null;
-    }
 
-    this.settings = new Settings(settings);
+      this.settings = new Settings(settings);
+    } catch (ex) {
+      this.settings = new Settings(null);
+    }
   },
 
   template: `
