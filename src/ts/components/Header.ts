@@ -9,6 +9,10 @@ export default {
   },
 
   template: `
-    <div id="header"></div>`,
+    <div id="header">
+      <a href="https://twitter.com/cubokta" target="_blank">
+        <img class="twitter" src="http://localhost:1313/img/twitter-icon.png">
+      </a>
+    </div>`,
 
 } as ComponentOptions<Header>
