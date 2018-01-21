@@ -2,7 +2,7 @@ import Vue, { ComponentOptions } from 'vue'
 
 import CubeUtils from '../models/CubeUtils'
 
-export interface Scrampble extends Vue {
+export interface Scramble extends Vue {
   scramble: string;
   validate: boolean;
 }
@@ -62,4 +62,4 @@ export default {
       this.scramble = paths.join('');
     },
   }
-} as ComponentOptions<Scrampble>
+} as ComponentOptions<Scramble>

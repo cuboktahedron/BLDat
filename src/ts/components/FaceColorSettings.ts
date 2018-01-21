@@ -3,7 +3,7 @@ import Vue, { ComponentOptions } from 'vue'
 import ColorSettings from '../models/ColorSettings'
 import CubeColor from '../models/CubeColor'
 
-export interface FaceSettings extends Vue {
+export interface FaceColorSettings extends Vue {
   colors: ColorSettings,
 }
 
@@ -54,4 +54,4 @@ export default {
       }
     }
   }
-} as ComponentOptions<FaceSettings>
+} as ComponentOptions<FaceColorSettings>

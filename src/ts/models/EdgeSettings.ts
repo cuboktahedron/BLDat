@@ -1,7 +1,7 @@
 import PartData from '../models/PartData'
 import PartsSettings from '../models/PartsSettings'
 
-export default class CornerSettings implements PartsSettings {
+export default class EdgeSettings implements PartsSettings {
   ub: PartData;
   ul: PartData;
   ur: PartData;
