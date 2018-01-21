@@ -79,4 +79,41 @@ export default class CornerSettings implements PartsSettings {
 
     return null;
   }
+
+  setBuffer(partData: PartData) {
+    for (let p in this.parts) {
+      this.parts[p].isBuffer = false;
+    }
+
+    this.parts[partData.no].isBuffer = true;
+  }
+
+  get saveData(): Object {
+    return {
+      ub: this.ub,
+      ul: this.ul,
+      ur: this.ur,
+      uf: this.uf,
+      fu: this.fu,
+      fl: this.fl,
+      fr: this.fr,
+      fd: this.fd,
+      df: this.df,
+      dl: this.dl,
+      dr: this.dr,
+      db: this.db,
+      bu: this.bu,
+      bl: this.bl,
+      br: this.br,
+      bd: this.bd,
+      lu: this.lu,
+      lb: this.lb,
+      lf: this.lf,
+      ld: this.ld,
+      ru: this.ru,
+      rb: this.rb,
+      rf: this.rf,
+      rd: this.rd,
+    }
+  }
 }

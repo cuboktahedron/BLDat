@@ -23,6 +23,7 @@ export default {
         settings = null;
       } else {
         settings = JSON.parse(settingsJson);
+        console.log(settings);
       }
 
       this.settings = new Settings(settings);
@@ -52,7 +53,7 @@ export default {
     },
 
     onSave() {
-      window.localStorage.setItem('settings', JSON.stringify(this.settings));
+      window.localStorage.setItem('settings', JSON.stringify(this.settings.saveData));
     }
   }
 } as ComponentOptions<MainApp>

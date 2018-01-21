@@ -14,4 +14,15 @@ export default class ColorSettings {
       this[p] = color;
     }
   }
+
+  get saveData(): Object {
+    return {
+      u: this.u,
+      l: this.l,
+      f: this.f,
+      r: this.r,
+      b: this.b,
+      d: this.d,
+    }
+  }
 }

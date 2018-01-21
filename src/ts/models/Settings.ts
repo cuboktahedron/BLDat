@@ -94,4 +94,12 @@ export default class Settings {
       colors: colors,
     };
   }
+
+  get saveData(): Object {
+    return {
+      edges: this.edges.saveData,
+      corners: this.corners.saveData,
+      colors: this.colors.saveData,
+    }
+  }
 }

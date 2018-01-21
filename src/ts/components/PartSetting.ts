@@ -20,7 +20,8 @@ export default {
   },
 
   template: `
-    <div class="part" :class="{ buffer : data.isBuffer }">
+    <div class="part" :class="{ buffer : data.isBuffer }"
+      @dblclick="onDblClick">
       <input type="text"
         maxlength="1"
         placeholder="X"
@@ -32,6 +33,10 @@ export default {
   methods: {
     onFocus: function(e) {
       e.target.select();
+    },
+
+    onDblClick: function() {
+      this.$emit('setBuffer');
     }
   }
 } as ComponentOptions<PartSetting>
