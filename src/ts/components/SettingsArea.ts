@@ -28,7 +28,7 @@ export default {
       <EdgeStickerSettings :edges="settings.edges" :colors="settings.colors" />
       <a class="title">CORNER</a>
       <CornerStickerSettings :corners="settings.corners" :colors="settings.colors" />
-      <a class="title">COLORS</a>
+      <a class="title">COLOR</a>
       <FaceColorSettings :colors="settings.colors" />
       <div class="button-area">
         <a class="button" @click="onClickSave">Save</a>
