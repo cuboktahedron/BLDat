@@ -268,10 +268,10 @@ a.title {
 #header,
 #footer {
   background: #333;
-  border-top: solid 1px black;
   color: white;
   line-height: 32px;
   height: 32px;
+  padding: 4px;
   text-align: center;
 }
 
@@ -307,4 +307,14 @@ a.button {
 
 a.button:hover {
   border: solid 2px grey;
+}
+
+#header .icon {
+  background: white;
+  display: inline-block;
+  height: 100%;
+
+  + .icon {
+    margin-left: 4px;
+  }
 }
