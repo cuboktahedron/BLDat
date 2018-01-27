@@ -23,7 +23,6 @@ export default {
         settings = null;
       } else {
         settings = JSON.parse(settingsJson);
-        console.log(settings);
       }
 
       this.settings = new Settings(settings);
