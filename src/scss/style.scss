@@ -271,8 +271,9 @@ a.title {
   color: white;
   line-height: 32px;
   height: 32px;
-  padding: 4px;
+  padding: 4px 0;
   text-align: center;
+  width: 100%;
 }
 
 #header {
@@ -313,8 +314,14 @@ a.button:hover {
   background: white;
   display: inline-block;
   height: 100%;
-
+  
   + .icon {
     margin-left: 4px;
   }
+}
+
+#header::after {
+  content: ' ';
+  display: inline-block;
+  width: 16px;
 }
