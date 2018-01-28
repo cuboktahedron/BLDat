@@ -1,6 +1,6 @@
 # BLDat
 
-BLDat is a 3x3x3 Rubik's cube BLD analyzer tool.
+BLDat is a 3x3x3 Rubik's cube BLD analyzer tool.  
 This can analyze for method using buffer(like M2, Old Pochmann method).
 
 ## Demo
@@ -15,7 +15,7 @@ https://cuboktahedron.github.io/q/cube/BLDat/
 
 1. Set buffers.
 
-    Double bordered parts is current buffer setting.     
+    Double bordered parts is current buffer setting.  
     Double click edge or corner parts to change.
 
 2. Set letters.
