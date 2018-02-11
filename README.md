@@ -16,11 +16,11 @@ https://cuboktahedron.github.io/q/cube/BLDat/
 1. Set buffers.
 
     Double bordered parts is current buffer setting.  
-    Double click edge or corner parts to change.
+    Double click or Long touch edge/corner parts to change.  
 
 2. Set letters.
 
-    Click edge or corner parts and change letter.
+    Click edge/corner parts and change letter.
 
 #### COLOR section
 
