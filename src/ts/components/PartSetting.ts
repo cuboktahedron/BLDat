@@ -4,11 +4,16 @@ import PartData from '../models/PartData'
 
 export interface PartSetting extends Vue {
   data: PartData,
+  timerId: number,
+
+  setBuffer(),
+  onLongTouch(),
 }
 
 export default {
   props: {
     data: {
+      timerId: null,
       type: PartData,
       required: true,
     }
@@ -21,7 +26,9 @@ export default {
 
   template: `
     <div class="part" :class="{ buffer : data.isBuffer }"
-      @dblclick="onDblClick">
+      @dblclick="onDblClick"
+      @touchstart="onTouchStart"
+      @touchend="onTouchEnd">
       <input type="text"
         maxlength="1"
         placeholder="X"
@@ -36,6 +43,22 @@ export default {
     },
 
     onDblClick: function() {
+      this.setBuffer();
+    },
+
+    onTouchStart: function() {
+      this.timerId = window.setTimeout(this.onLongTouch, 500);
+    },
+
+    onTouchEnd: function() {
+      clearTimeout(this.timerId);
+    },
+
+    onLongTouch: function() {
+      this.setBuffer();
+    },
+
+    setBuffer: function() {
       this.$emit('setBuffer');
     }
   }
