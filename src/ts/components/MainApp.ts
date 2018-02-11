@@ -1,6 +1,7 @@
 import Vue, { ComponentOptions } from 'vue'
 
 import Settings from '../models/Settings'
+import * as octicons from 'octicons'
 
 export interface MainApp extends Vue {
   settings: Settings,
@@ -38,8 +39,8 @@ export default {
         <SettingsArea :settings="settings" v-show="showsSettings"
           @save="onSave" />
         <div class="folder" @click="toggleSettings">
-          <icon name="fold" width="24" v-if="showsSettings"></icon>
-          <icon name="unfold" width="24" v-if="!showsSettings"></icon>
+          <div class="icon" v-if="showsSettings" v-html="markUnfold" />
+          <div class="icon" v-if="!showsSettings" v-html="markFold" />
         </div>
         <AnalyzeArea :settings="settings" />
       </div>
@@ -53,6 +54,22 @@ export default {
 
     onSave() {
       window.localStorage.setItem('settings', JSON.stringify(this.settings.saveData));
+    },
+  },
+
+  computed: {
+    markFold() {
+      const icon = octicons['chevron-down'];
+      return icon.toSVG({
+        'height': 24,
+      });
+    },
+
+    markUnfold() {
+      const icon = octicons['chevron-up'];
+      return icon.toSVG({
+        'height': 24,
+      });
     }
   }
 } as ComponentOptions<MainApp>

@@ -9,7 +9,6 @@ var scss = {
 };
 
 import Vue from 'vue'
-import * as icon from 'vue-icon'
 
 import AnalyzeArea from './ts/components/AnalyzeArea'
 import AnalyzerResultArea from './ts/components/AnalyzerResultArea'
@@ -33,7 +32,6 @@ Vue.component('AnalyzerResultArea', AnalyzerResultArea);
 Vue.component('ColorSetting', ColorSetting);
 Vue.component('CornerStickerSettings', CornerStickerSettings);
 Vue.component('EdgeStickerSettings', EdgeStickerSettings);
-Vue.component('icon', icon);
 Vue.component('FaceColorSettings', FaceColorSettings);
 Vue.component('Footer', Footer);
 Vue.component('Header', Header);
