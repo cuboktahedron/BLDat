@@ -67,7 +67,7 @@ export default class EdgeSettings implements PartsSettings {
   }
 
   get nextCandidates(): string[] {
-    return ['ub', 'ul', 'ur', 'uf', 'fl', 'fr', 'lb', 'ld', 'rb', 'rd', 'db'];
+    return ['ub', 'ul', 'ur', 'uf', 'fl', 'fr', 'lb', 'ld', 'rb', 'rd', 'db', 'df'];
   }
 
   get bufferParts(): PartData {
