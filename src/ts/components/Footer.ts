@@ -9,6 +9,6 @@ export default {
   },
 
   template: `
-    <div id="footer">BLDat v0.92</div>`,
+    <div id="footer">BLDat v0.93</div>`,
 
   } as ComponentOptions<Footer>
