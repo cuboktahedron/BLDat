@@ -63,7 +63,7 @@ describe('Analyzer', function () {
 
       expect(result.scramble).to.equal("DR2UB2UR2UF2D'F'U'B'FDL'F'UB2F'U");
       expect(result.edges).to.eql(["くちにえれし", "かさか"]);
-      expect(result.corners).to.eql(["る", "らきせた", "りぬねり"]);
+      expect(result.corners).to.eql(["る", "りぬねり", "れらきせ"]);
       expect(result.hasParity).to.be.true;
     });
 
